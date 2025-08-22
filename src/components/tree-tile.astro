@@ -1,0 +1,33 @@
+---
+const { name, imgFilename, summary } = Astro.props;
+---
+
+<div class="tree-tile">
+    <div class="title">{name}</div>
+    <img src=`/tree_images/${imgFilename}` />
+    <div>{summary}</div>
+</div>
+
+<style>
+    img {
+        max-width: 100%;
+    }
+
+    .tree-tile {
+        border: 5px solid black;
+        display: inline-block;
+        height: 20em;
+        overflow: hidden;
+        padding: 5px;
+        vertical-align: top;
+        width: 15em;
+    }
+
+    .tree-tile:hover {
+        margin-top: 20px;
+    }
+
+    .title {
+        font-weight: bold;
+    }
+</style>
