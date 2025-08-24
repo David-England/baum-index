@@ -1,0 +1,12 @@
+---
+import TreeTile from "./tree-tile.astro";
+import type TreeMetadata from "../types/tree-metadata"
+
+const { treeMetadatas } = Astro.props;
+---
+
+<div>
+    {(treeMetadatas as TreeMetadata[]).map(t =>
+        <TreeTile name={t.name} imgFilename={t.imgFilename} summary={t.summary} />
+    )}
+</div>

@@ -1,16 +1,11 @@
 ---
-import TreeTile from '../components/tree-tile.astro'
-
-interface Tree {
-    name: string,
-    imgFilename: string,
-    summary: string
-}
+import TreeContainer from '../components/tree-container.astro'
+import type TreeMetadata from '../types/tree-metadata'
 
 const title: string = "baum_index"
 
 const dummySummary: string = "Placeholder text demonstrating how cool this tree is"
-const treeList: Tree[] = [
+const treeList: TreeMetadata[] = [
 	{ name: "Beech", imgFilename: "beech.jpg", summary: dummySummary },
 	{ name: "Oak", imgFilename: "oak.jpg", summary: dummySummary },
 	{ name: "Ash", imgFilename: "ash.jpg", summary: dummySummary },
@@ -39,9 +34,7 @@ const treeList: Tree[] = [
 			All images stolen from the internet with no rights reserved.
 		</p>
 		
-		{treeList.map(t =>
-			<TreeTile name={t.name} imgFilename={t.imgFilename} summary={t.summary} />
-		)}
+		<TreeContainer treeMetadatas={treeList} />
 	</body>
 </html>
 
