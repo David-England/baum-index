@@ -15,18 +15,23 @@ const { name, imgFilename, summary } = Astro.props;
     }
 
     .tree-tile {
+        background-color: white;
         border: 5px solid black;
         display: inline-block;
         height: 20em;
+        margin-bottom: 5px;
         overflow: hidden;
         padding: 5px;
-        transition: margin-top .2s ease-out;
+        position: relative;
+        transition: margin .2s ease-out;
         vertical-align: top;
         width: 15em;
     }
 
     .tree-tile:hover {
+        margin-bottom: -15px;
         margin-top: 20px;
+        z-index: 8;
     }
 
     .title {
