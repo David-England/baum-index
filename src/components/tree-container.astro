@@ -1,4 +1,5 @@
 ---
+import TreePopout from "./tree-popout.astro";
 import TreeTile from "./tree-tile.astro";
 import type TreeMetadata from "../types/tree-metadata"
 
@@ -21,4 +22,5 @@ function sortTreeMetadata(tm1: TreeMetadata, tm2: TreeMetadata): number {
     {(treeMetadatas as TreeMetadata[]).sort(sortTreeMetadata).map(t =>
         <TreeTile name={t.name} imgFilename={t.imgFilename} summary={t.summary} />
     )}
+    <TreePopout name="Willow", imgFilename="willow.jpg" fullDescription="Some dummy text...." />
 </div>
