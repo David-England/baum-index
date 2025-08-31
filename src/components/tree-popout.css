@@ -1,0 +1,33 @@
+img {
+    max-height: 75%;
+    max-width: 100%;
+}
+
+.tree-popout {
+    background-color: white;
+    border: 5px solid black;
+    height: 30em;
+    left: 100px;
+    margin: auto;
+    position: fixed;
+    top: 100px;
+    width: 40em;
+    z-index: 16;
+}
+
+.tree-popout .image-pane {
+    border-right: 5px dashed black;
+    display: inline-block;
+    height: 100%;
+    padding: 5px;
+    vertical-align: top;
+    width: 45%;
+}
+
+.tree-popout .text-pane {
+    display: inline-block;
+    height: 100%;
+    padding: 5px;
+    vertical-align: top;
+    width: 45%;
+}
