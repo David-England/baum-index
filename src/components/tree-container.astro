@@ -4,6 +4,7 @@ import TreeTile from "./tree-tile.astro";
 import type TreeMetadata from "../types/tree-metadata"
 
 const { treeMetadatas } = Astro.props;
+const isPoppedOut: boolean = false;
 
 function sortTreeMetadata(tm1: TreeMetadata, tm2: TreeMetadata): number {
     const s1 = tm1.name.toUpperCase();
@@ -22,5 +23,6 @@ function sortTreeMetadata(tm1: TreeMetadata, tm2: TreeMetadata): number {
     {(treeMetadatas as TreeMetadata[]).sort(sortTreeMetadata).map(t =>
         <TreeTile name={t.name} imgFilename={t.imgFilename} summary={t.summary} />
     )}
-    <TreePopout name="Willow", imgFilename="willow.jpg" fullDescription="Some dummy text...." />
+    {isPoppedOut &&
+        <TreePopout name="Willow" imgFilename="willow.jpg" fullDescription="Some dummy text...." />}
 </div>
