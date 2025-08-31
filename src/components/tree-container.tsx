@@ -1,5 +1,5 @@
-import TreePopout from "./tree-popout";
-import TreeTile from "./tree-tile";
+import TreePopout from "./tree-popout/tree-popout";
+import TreeTile from "./tree-tile/tree-tile";
 import type TreeMetadata from "../types/tree-metadata"
 
 var isPoppedOut: boolean = false;
