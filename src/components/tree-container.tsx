@@ -20,10 +20,12 @@ export default function TreeContainer({treeMetadatas}: {treeMetadatas: TreeMetad
     return (
         <div>
             {treeMetadatas.sort(sortTreeMetadata).map(t =>
-                <TreeTile key={t.name} name={t.name} imgFilename={t.imgFilename} summary={t.summary} onClick={() => setIsPoppedOut(true)} />
+                <TreeTile key={t.name} name={t.name} imgFilename={t.imgFilename}
+                    summary={t.summary} onClick={() => setIsPoppedOut(true)} />
             )}
             {isPoppedOut &&
-                <TreePopout name="Willow" imgFilename="willow.jpg" fullDescription="Some dummy text...." />
+                <TreePopout name="Willow" imgFilename="willow.jpg"
+                    fullDescription="Some dummy text...." />
             }
         </div>
     )
