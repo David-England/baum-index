@@ -1,8 +1,7 @@
 import TreePopout from "./tree-popout/tree-popout";
 import TreeTile from "./tree-tile/tree-tile";
+import { useState } from "react";
 import type TreeMetadata from "../types/tree-metadata"
-
-var isPoppedOut: boolean = false;
 
 function sortTreeMetadata(tm1: TreeMetadata, tm2: TreeMetadata): number {
     const s1 = tm1.name.toUpperCase();
@@ -17,10 +16,11 @@ function sortTreeMetadata(tm1: TreeMetadata, tm2: TreeMetadata): number {
 }
 
 export default function TreeContainer({treeMetadatas}: {treeMetadatas: TreeMetadata[]}) {
+    const [isPoppedOut, setIsPoppedOut] = useState(false);
     return (
         <div>
             {treeMetadatas.sort(sortTreeMetadata).map(t =>
-                <TreeTile key={t.name} name={t.name} imgFilename={t.imgFilename} summary={t.summary} />
+                <TreeTile key={t.name} name={t.name} imgFilename={t.imgFilename} summary={t.summary} onClick={() => setIsPoppedOut(true)} />
             )}
             {isPoppedOut &&
                 <TreePopout name="Willow" imgFilename="willow.jpg" fullDescription="Some dummy text...." />
