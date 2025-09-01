@@ -31,3 +31,19 @@ img {
     vertical-align: top;
     width: 45%;
 }
+
+.tree-popout .text-pane .exit-button {
+    border: solid 2px darkgrey;
+    color: darkgrey;
+    float: right;
+    padding: 5px;
+    text-align: right;
+    width: fit-content;
+}
+
+.tree-popout .text-pane .exit-button:hover {
+    background-color: lightseagreen;
+    color: white;
+    font-weight: bold;
+    text-decoration: underline;
+}

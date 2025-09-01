@@ -14,6 +14,7 @@ export default function TreePopout({name, imgFilename, fullDescription}: inputAr
                 <img src={`/tree_images/${imgFilename}`} />
             </div>
             <div className="text-pane">
+                <div className={"exit-button"}>EXIT</div>
                 <p>{fullDescription}</p>
             </div>
         </div>        
