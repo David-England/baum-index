@@ -6,6 +6,7 @@ img {
 .tree-popout {
     background-color: white;
     border: 5px solid black;
+    display: flex;
     height: 30em;
     left: 100px;
     margin: auto;
@@ -17,19 +18,17 @@ img {
 
 .tree-popout .image-pane {
     border-right: 5px dashed black;
-    display: inline-block;
     height: 100%;
     padding: 5px;
     vertical-align: top;
-    width: 45%;
+    width: 50%;
 }
 
 .tree-popout .text-pane {
-    display: inline-block;
     height: 100%;
     padding: 5px;
     vertical-align: top;
-    width: 45%;
+    width: 50%;
 }
 
 .tree-popout .text-pane .exit-button {
