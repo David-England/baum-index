@@ -19,13 +19,6 @@ export default function TreeContainer({treeMetadatas}: {treeMetadatas: TreeMetad
     const [isPoppedOut, setIsPoppedOut] = useState(false);
     const [activeTree, setActiveTree] = useState({} as TreeMetadata);
 
-    function popOut(tm: TreeMetadata) {
-        if (!isPoppedOut) {
-            setActiveTree(tm);
-            setIsPoppedOut(true);
-        }
-    }
-
     return (
         <div>
             {treeMetadatas.sort(sortTreeMetadata).map(t =>
@@ -39,4 +32,12 @@ export default function TreeContainer({treeMetadatas}: {treeMetadatas: TreeMetad
             }
         </div>
     )
+
+
+    function popOut(tm: TreeMetadata) {
+        if (!isPoppedOut) {
+            setActiveTree(tm);
+            setIsPoppedOut(true);
+        }
+    }
 }
