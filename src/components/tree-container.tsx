@@ -17,14 +17,23 @@ function sortTreeMetadata(tm1: TreeMetadata, tm2: TreeMetadata): number {
 
 export default function TreeContainer({treeMetadatas}: {treeMetadatas: TreeMetadata[]}) {
     const [isPoppedOut, setIsPoppedOut] = useState(false);
+    const [activeTree, setActiveTree] = useState({} as TreeMetadata);
+
+    function popOut(tm: TreeMetadata) {
+        if (!isPoppedOut) {
+            setActiveTree(tm);
+            setIsPoppedOut(true);
+        }
+    }
+
     return (
         <div>
             {treeMetadatas.sort(sortTreeMetadata).map(t =>
                 <TreeTile key={t.name} name={t.name} imgFilename={t.imgFilename}
-                    summary={t.summary} onClick={() => setIsPoppedOut(true)} />
+                    summary={t.summary} onClick={() => popOut(t)} />
             )}
             {isPoppedOut &&
-                <TreePopout name="Willow" imgFilename="willow.jpg"
+                <TreePopout name={activeTree.name} imgFilename={activeTree.imgFilename}
                     fullDescription="Some dummy text...."
                     onClickExit={() => setIsPoppedOut(false)} />
             }
