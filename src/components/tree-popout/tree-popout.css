@@ -8,10 +8,9 @@ img {
     border: 5px solid black;
     display: flex;
     height: 30em;
-    left: 100px;
+    inset: 0px;
     margin: auto;
     position: fixed;
-    top: 100px;
     width: 40em;
     z-index: 16;
 }
