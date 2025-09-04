@@ -6,6 +6,7 @@ img {
 .tree-tile {
     background-color: white;
     border: 5px solid black;
+    cursor: pointer;
     display: inline-block;
     height: 20em;
     margin-bottom: 5px;
