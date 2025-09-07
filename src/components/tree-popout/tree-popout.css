@@ -17,15 +17,16 @@ img {
 
 .tree-popout .image-pane {
     border-right: 5px dashed black;
-    height: 100%;
+    height: auto;
     padding: 5px;
     vertical-align: top;
     width: 50%;
 }
 
 .tree-popout .text-pane {
-    height: 100%;
+    height: auto;
     padding: 5px;
+    position: relative;
     vertical-align: top;
     width: 50%;
 }
@@ -41,6 +42,25 @@ img {
 }
 
 .tree-popout .text-pane .exit-button:hover {
+    background-color: lightseagreen;
+    color: white;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.tree-popout .text-pane .further-info-button {
+    border: solid 2px darkgrey;
+    color: darkgrey;
+    cursor: pointer;
+    height: fit-content;
+    inset: auto 0px 5px 0px;
+    margin: auto;
+    padding: 5px;
+    position: absolute;
+    width: fit-content;
+}
+
+.tree-popout .text-pane .further-info-button:hover {
     background-color: lightseagreen;
     color: white;
     font-weight: bold;
