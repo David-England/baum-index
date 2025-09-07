@@ -4,19 +4,8 @@ import type TreeMetadata from '../types/tree-metadata'
 
 const title: string = "baum_index"
 
-const dummySummary: string = "Placeholder text demonstrating how cool this tree is"
-const treeList: TreeMetadata[] = [
-	{ name: "Beech", imgFilename: "beech.jpg", summary: dummySummary },
-	{ name: "Oak", imgFilename: "oak.jpg", summary: dummySummary },
-	{ name: "Ash", imgFilename: "ash.jpg", summary: dummySummary },
-	{ name: "Elm", imgFilename: "elm.jpg", summary: dummySummary },
-	{ name: "Hazel", imgFilename: "hazel.jpg", summary: dummySummary },
-	{ name: "Willow", imgFilename: "willow.jpg", summary: dummySummary },
-	{ name: "Spruce", imgFilename: "spruce.jpg", summary: dummySummary },
-	{ name: "London Plane", imgFilename: "london_plane.jpg", summary: dummySummary },
-	{ name: "Rowan", imgFilename: "rowan.jpg", summary: dummySummary },
-	{ name: "Silver Birch", imgFilename: "silver_birch.jpg", summary: dummySummary },
-]
+const results = Object.values(import.meta.glob("/public/metadata.json", {eager: true}));
+const treeList = (results as {default: TreeMetadata[]}[])[0].default;
 ---
 
 <html lang="en">
