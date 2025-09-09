@@ -27,7 +27,7 @@ export default function TreeContainer({treeMetadatas}: {treeMetadatas: TreeMetad
             )}
             {isPoppedOut &&
                 <TreePopout name={activeTree.name} imgFilename={activeTree.imgFilename}
-                    fullDescription="Some dummy text...."
+                    fullDescription={activeTree.fullDescription}
                     onClickExit={() => setIsPoppedOut(false)} />
             }
         </div>
