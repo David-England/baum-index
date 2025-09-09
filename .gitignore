@@ -23,5 +23,8 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
+# the trees themselves
+metadata.json
+
 # tree images
 tree_images/
