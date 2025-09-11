@@ -28,6 +28,7 @@ __pycache__/
 
 # the trees themselves
 metadata.json
+nbn_data.json
 
 # tree images
 tree_images/
