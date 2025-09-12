@@ -1,5 +1,6 @@
 ---
 import TreeContainer from '../components/tree-container';
+import TreeTable from '../components/tree-table/tree-table';
 import type TreeMetadata from '../types/tree-metadata'
 
 const title: string = "baum_index"
@@ -24,6 +25,10 @@ const treeList = (results as {default: TreeMetadata[]}[])[0].default;
 		</p>
 		
 		<TreeContainer treeMetadatas={treeList} client:load />
+
+		<h2>Common British trees</h2>
+		<p>Here are the most common trees in the UK, according to the NBN Atlas:</p>
+		<TreeTable client:load />
 	</body>
 </html>
 
