@@ -1,0 +1,14 @@
+---
+import type CommonTree from "../types/common-tree"
+
+const data = await (await fetch("http://localhost:5050")).json() as CommonTree[];
+---
+<table>
+    {data.map(row =>
+        <tr>
+            <td>{row.name}</td>
+            <td>{row.latin_name}</td>
+            <td>{row.is_native ? "Native" : "Not native"}</td>
+        </tr>
+    )}
+</table>
