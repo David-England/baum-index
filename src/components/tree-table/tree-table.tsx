@@ -4,7 +4,7 @@ import type CommonTree from '../../types/common-tree'
 const queryClient = new QueryClient();
 
 async function getCommonTrees(): Promise<CommonTree[]> {
-    return await (await fetch("http://lcoalhost:5050")).json();
+    return await (await fetch("http://localhost:5050")).json();
 }
 
 export default function TreeTableWrapper() {
