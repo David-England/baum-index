@@ -12,3 +12,19 @@ const data = await (await fetch("http://localhost:5050")).json() as CommonTree[]
         </tr>
     )}
 </table>
+
+<style>
+    table {
+        border-collapse: collapse;
+    }
+
+    td {
+        border: 5px solid black;
+        border-spacing: 0px;
+        padding: 5px;
+    }
+
+    tr:hover {
+        background-color: lightgrey;
+    }
+</style>
