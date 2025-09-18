@@ -1,16 +1,17 @@
 ---
-import type CommonTree from "../types/common-tree"
+import getCommonTrees from "../queries/get-common-trees";
 
-const data = await (await fetch("http://localhost:5050")).json() as CommonTree[];
+const result = await getCommonTrees();
 ---
 <table>
-    {data.map(row =>
+    {result.success && result.data.map(row =>
         <tr>
             <td>{row.name}</td>
             <td>{row.latin_name}</td>
             <td>{row.is_native ? "Native" : "Not native"}</td>
         </tr>
     )}
+    {!result.success && <p class={"error"}>Sorry, an error occurred. ⛔⛔⛔⛔</p>}
 </table>
 
 <style>
@@ -25,5 +26,11 @@ const data = await (await fetch("http://localhost:5050")).json() as CommonTree[]
 
     tr:hover {
         background-color: lightgrey;
+    }
+
+    p.error {
+        border: solid 2px red;
+        padding: 5px;
+        width: fit-content;
     }
 </style>
